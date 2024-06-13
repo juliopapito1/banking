@@ -1,0 +1,562 @@
+.navigation-links-nav {
+  flex: 0 0 auto; /* Shorthand for different flex-* properties */
+  display: flex; /* Specifies type of rendering box for the class elements - flex makes it a block-level flex container*/
+  align-items: center; /* Aligns all items in the container in the centre of it*/
+  flex-direction: row; /* Additionally makes the items appear in a horizontal row next to each other*/
+}
+.navigation-links-text1 {
+  /* Adds a space around the element outside of the border on the left side using the custom spacing variable imported */
+  margin-left: var(--dl-space-space-twounits);
+}
+.navigation-links-text2 {
+  margin-left: var(--dl-space-space-twounits);
+}
+.navigation-links-text3 {
+  margin-left: var(--dl-space-space-twounits);
+}
+.navigation-links-text4 {
+  margin-left: var(--dl-space-space-twounits);
+}
+
+
+@media(max-width: 767px) /* Sets rule for the header to help with formatting across platforms/devices */ {
+  .navigation-links-nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .navigation-links-text {
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .navigation-links-text1 {
+    margin-left: 0;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .navigation-links-text2 {
+    margin-left: 0;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .navigation-links-text3 {
+    margin-left: 0;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .navigation-links-text4 {
+    margin-left: 0;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+}
+/* Styling for the general header container defined in the HTML as a class */
+.header-header {
+  width: 1196px; /* Defines consistent width for the header bar*/
+  display: flex;
+  position: relative; /* Ensures the elements in the class are positioned relative to each other to help ensure the elements fit together dynamically */
+  max-width: var(--dl-size-size-maxwidth); 
+  align-items: center;
+  padding-top: var(--dl-space-space-twounits); /* Adds space at the top of the container */
+  border-color: #242021; /* Defines colour of the border using defined hex code used consistently throughout program */
+  border-width: 1px;
+  padding-left: var(--dl-space-space-threeunits); /* Adds space to sides of header using custom spacing variables */
+  padding-right: var(--dl-space-space-threeunits);
+  padding-bottom: var(--dl-space-space-twounits);
+  justify-content: space-between; /* Adds automatic spacing between elements to help the header bar look similiar to the norm followed in most commercial websites */
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px; /* Ensures the border only appears on the bottom to appear as a divider line instead of a box border */
+}
+.header-image {
+  width: 200px; /* Defines the size of the logo image used */
+  object-fit: cover; /* Ensures image keeps original aspect ratio */
+}
+.header-image1 {
+  /* Defines the size of the logo text image used */
+  top: 90px;
+  left: 237px;
+  width: 250px;
+  height: 100px;
+  position: absolute; /* Ensures the image always stays in the same place to have complete control over positioning */
+  object-fit: cover; /* Ensures the image is not stretched in anyway and that it keeps aspect ratio */
+}
+.header-container {
+  flex: 0 0 auto;
+  /* makes the width and height of the container dynamic to the needs of its contents */
+  width: auto; 
+  height: auto;
+  display: flex;
+  align-items: space-between;
+  flex-direction: column; /* Forces all elements in the container to appear in a vertical column on top of eachother */
+}
+.header-container1 { /* Defines styling for class with name header-container1 */
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  position: relative; /* Elements positions are relative to one another */
+  align-items: space-between;
+  flex-direction: column;
+}
+.header-container2 { /* Defines styling for class with name header-container2 */
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: space-between;
+  flex-direction: column;
+}
+.header-container3 { 
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  position: relative;
+  align-items: space-between;
+  flex-direction: column;
+}
+.header-container4 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: space-between;
+  flex-direction: column;
+}
+.header-container5 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: space-between;
+  flex-direction: column;
+}
+.header-icon-group {
+  display: flex;
+}
+.header-burger-menu {
+  display: none;
+}
+.header-icon {
+  width: var(--dl-size-size-xsmall);
+  height: var(--dl-size-size-xsmall);
+  display: flex;
+}
+.header-icon02 { /* Defines styling for the first SVG icon - the homepage house */
+  top: 0px;
+  left: -150px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.header-icon04 { /* Defines styling for the second SVG icon - the logout door */
+  top: 0px;
+  flex: 1;
+  left: -55px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.header-mobile-menu {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  padding: 32px;
+  z-index: 100;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.header-nav {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.header-container6 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--dl-space-space-threeunits);
+  justify-content: space-between;
+}
+.header-image2 {
+  height: 2rem;
+}
+.header-close-mobile-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-icon06 { /* Defines size of the icons with custom size variables */
+  width: var(--dl-size-size-xsmall);
+  height: var(--dl-size-size-xsmall);
+}
+.header-icon08 { /* Defines size of the icons with custom size variables */
+  width: var(--dl-size-size-xsmall);
+  height: var(--dl-size-size-xsmall);
+  margin-right: var(--dl-space-space-twounits);
+}
+.header-icon10 { /* Defines size of the icons with custom size variables */
+  width: var(--dl-size-size-xsmall);
+  height: var(--dl-size-size-xsmall);
+  margin-right: var(--dl-space-space-twounits);
+}
+.header-icon12 { /* Defines size of the icons with custom size variables */
+  width: var(--dl-size-size-xsmall);
+  height: var(--dl-size-size-xsmall);
+}
+.header-icon14 {
+  width: 24px;
+  height: 24px;
+}
+/* Helps ensure compatibility and conistency across devices */
+@media(max-width: 767px /* Defines the maximum width the media can be */) {
+  .header-header {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .header-burger-menu {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    justify-content: center;
+  }
+}
+@media(max-width: 479px) {
+  .header-header {
+    padding: var(--dl-space-space-unit);
+  }
+  .header-mobile-menu {
+    padding: 16px;
+  }
+}
+
+.home-container {
+  width: 100%;
+  display: flex;
+  overflow: auto; /* Ensures if elements are larger than the page it will dynamically add more that can be scrolled through */
+  min-height: 100vh;
+  align-items: flex-start; /* Elements are positioned at the start of the flex-box container */
+  flex-direction: column; /* Elements appear in a vertical stack */
+  justify-content: flex-start; /* Puts elements at the start of the container to ensure available space is used */
+}
+.home-container01 {
+  flex: 0 0 auto;
+  width: auto; /* Allows the width to dynamically change as needed */
+  height: 361px;
+  display: flex; /* Specifies type of rendering box for the class elements - flex makes it a block-level flex container*/
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.home-container02 {
+  flex: 0 0 auto;
+  width: auto;
+  height: 361px;
+  display: flex; /* Specifies type of rendering box for the class elements - flex makes it a block-level flex container*/
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.home-container03 {
+  width: 347px;
+  height: 354px;
+  display: flex; /* Specifies type of rendering box for the class elements - flex makes it a block-level flex container*/
+  align-items: flex-start;
+  flex-direction: column;
+}
+.home-text {
+  font-size: 48px; /* Defines the size of the text */
+  align-self: flex-start;
+  font-style: normal; /* Ensures the font is not italic/bold */
+  font-weight: 700; /* Adds to the weighting of the font so it has a certain level of thickness to the text similiar to making text bold but the severity can be chosen */
+  padding-top: var(--dl-space-space-halfunit); /* Padding around the text using custom size variables */
+  padding-left: var(--dl-space-space-unit);
+  padding-right: var(--dl-space-space-halfunit);
+  padding-bottom: var(--dl-space-space-halfunit);
+  text-transform: capitalize; /* Ensures the first letter of each word is CAPITAL */
+}
+.home-text01 {
+  font-style: normal;
+  font-weight: 500;
+  padding-top: var(--dl-space-space-halfunit);
+  padding-left: var(--dl-space-space-oneandhalfunits);
+  padding-right: var(--dl-space-space-oneandhalfunits);
+  padding-bottom: var(--dl-space-space-halfunit);
+}
+.home-text04 {
+  line-height: 1.4; /* Specifies the height of a line - changes the gap between lines of text*/
+  padding-left: var(--dl-space-space-oneandhalfunits);
+}
+.home-button {
+  color: #242021;
+  font-size: 14px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-unit);
+  text-align: center;
+  font-weight: 600;
+  margin-left: var(--dl-space-space-oneandhalfunits);
+}
+.home-container04 {
+  width: 843px;
+  height: 100%;
+  display: flex;
+  position: relative; /* Ensures the elements are positioned relative to eachother */
+  align-self: flex-end; /* Element appears at end of the container */
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.home-container05 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column; /* Elements in the container appear in a vertical stack */
+}
+.home-container06 {
+  flex: 0 0 auto;
+  width: 320px;
+  height: 358px;
+  display: flex;
+  position: relative; /* Elements appear relative to eachother */
+  align-items: flex-start;
+  flex-direction: column;
+}
+.home-text09 {
+  padding-top: var(--dl-space-space-oneandhalfunits);
+  padding-left: var(--dl-space-space-oneandhalfunits);
+}
+.home-text10 {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  position: relative;
+  font-size: 28px;
+  align-self: flex-end;
+  font-style: normal;
+  font-weight: 500;
+  padding-left: var(--dl-space-space-fourunits);
+  padding-bottom: var(--dl-space-space-twounits);
+}
+.home-container07 {
+  flex: 0 0 auto;
+  width: 522px;
+  height: 361px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+.home-li { /* Defines styling for list elements */
+  display: flex;
+  font-size: 18px;
+  padding-top: var(--dl-space-space-halfunit);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  padding-bottom: var(--dl-space-space-halfunit);
+  list-style-type: none;
+  border-top-width: 0px;
+  list-style-image: none;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px; /* Creates divider line below the list element */
+  list-style-position: inside; /* Bullet point appears inside the list element */
+}
+.home-li1 { /* Defines styling for list elements */
+  display: flex;
+  font-size: 18px;
+  padding-top: var(--dl-space-space-halfunit);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  padding-bottom: var(--dl-space-space-halfunit);
+  list-style-type: none;
+  border-top-width: 0px;
+  list-style-image: none;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px; /* Creates divider line below the list element */
+  list-style-position: inside; /* Bullet point appears inside the list element */
+}
+.home-li2 {
+  display: flex;
+  font-size: 18px;
+  padding-top: var(--dl-space-space-halfunit);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  padding-bottom: var(--dl-space-space-halfunit);
+  list-style-type: none;
+  border-top-width: 0px;
+  list-style-image: none;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  list-style-position: inside;
+}
+.home-li3 {
+  display: flex;
+  font-size: 18px;
+  padding-top: var(--dl-space-space-halfunit);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  padding-bottom: var(--dl-space-space-halfunit);
+  list-style-type: none;
+  border-top-width: 0px;
+  list-style-image: none;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  list-style-position: inside;
+}
+.home-li4 {
+  display: flex;
+  font-size: 18px;
+  padding-top: var(--dl-space-space-halfunit);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  padding-bottom: var(--dl-space-space-halfunit);
+  list-style-type: none;
+  border-top-width: 0px;
+  list-style-image: none;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  list-style-position: inside;
+}
+.home-li5 {
+  display: flex;
+  font-size: 18px;
+  padding-top: var(--dl-space-space-halfunit);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  padding-bottom: var(--dl-space-space-halfunit);
+  list-style-type: none;
+  border-top-width: 0px;
+  list-style-image: none;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  list-style-position: inside;
+}
+.home-text21 {
+  top: 0px;
+  right: 0px;
+  width: 423px;
+  position: absolute;
+  padding-top: var(--dl-space-space-oneandhalfunits);
+  padding-bottom: 10px;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  margin-right: var(--dl-space-space-sixunits);
+  margin-bottom: 50px;
+  padding-right: var(--dl-space-space-sixunits);
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+}
+.home-container08 { /*The container for transaction history + transaction functions*/
+  width: 500px;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  flex-direction: column !important;
+  margin-left: 20px;
+  /*justify-content: flex-start;*/
+}
+.transaction-action-container { /* Styling for container holding withdraw, deposit and transaction features */
+  width: auto; /* Width is dynamically assigned */
+  height: auto; /* Height is dynamically assigned */
+  flex-direction: row !important; /* Elements appear in a horizontal row, !important enforces this styling over any other conflicting styling */
+  align-items: flex-start;
+  position: relative; /* Position of elements are relative to each other */
+  display: flex; /* Makes the class an inline-flex container */
+}
+.home-container09 {
+  flex: 0 0 auto;
+  width: auto;
+  height: 100%;
+  display: flex;
+ /* align-items: flex-start;*/
+  flex-direction: column !important; /* Important tag overrides all other styling */
+}
+.home-text22 {
+  padding-top: var(--dl-space-space-oneandhalfunits);
+  padding-left: var(--dl-space-space-oneandhalfunits);
+}
+.home-container10 {
+  flex: 0 0 auto;
+  width: 345px;
+  height: 297px;
+  display: flex;
+  position: relative;
+  flex-direction: column !important;
+}
+.home-textinput {
+  top: 31px;
+  left: 48px;
+  position: absolute; /* Text appears in a set position for complete control */
+}
+.home-textinput1 {
+  top: 149px;
+  left: 48px;
+  position: absolute; /* Text appears in a set position for complete control */
+}
+.home-textinput2 {
+  top: 90px;
+  left: 48px;
+  position: absolute; /* Text appears in a set position for complete control */
+}
+.home-container11 {
+  flex: 0 0 auto;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column !important;
+}
+.home-text23 {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: relative;
+  padding-top: var(--dl-space-space-oneandhalfunits);
+  margin-right: var(--dl-space-space-sixunits);
+  padding-right: var(--dl-space-space-sixunits);
+}
+.home-text24 {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: relative;
+  padding-top: var(--dl-space-space-oneandhalfunits);
+  margin-right: var(--dl-space-space-sixunits);
+  padding-right: var(--dl-space-space-sixunits);
+}
+.home-container12 {
+  width: auto; 
+  height: auto; 
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column !important;
+}
+.home-textinput3 { 
+  position: relative; /*Makes the text field appear relative to the surrounding elements*/
+}
+.home-textinput4 {
+  position: relative; /*Makes the text field appear relative to the surrounding elements*/
+}
+.home-textinput5 {
+  position: relative; /*Makes the text field appear relative to the surrounding elements*/
+}
+.home-textinput6 {
+  position: relative;
+}
+.home-textinput7 {
+  position: relative
+}
+.home-textinput8 {
+  position: relative
+}
+.home-textinput9 {
+  position: relative
+}

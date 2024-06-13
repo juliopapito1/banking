@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recovery Page</title>
+</head>
+<body>
+  <h1>
+    Account Recovery
+  </h1>
+  <p>
+    Please enter your Username and Recovery Code in order to reset your password.
+  </p>
+<form method='post' action="/resetpassword"> <!-- Calls the app route /resetpassword in main.py when button is pressed -->
+  <label for="username">Username</label>
+  <input type='text' id='username' name='username'>
+  <br>
+  <label for="recovery_code">Recovery Code</label>
+  <input type='text' id='recovery_code' name='recovery_code'>
+  <br>
+  <label for="new_password">New Password</label>
+  <input type='text' id='new_password' name='new_password'>
+  <button type='submit'>Reset Password</button>
+</form>
+</body>
+</html>

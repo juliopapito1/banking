@@ -1,0 +1,52 @@
+2024-05-10 12:46:52,857 - INFO - System loaded at: IP=%s
+2024-05-10 12:46:53,254 - INFO - BEGIN (implicit)
+2024-05-10 12:46:53,362 - INFO - BEGIN (implicit)
+2024-05-10 12:46:53,450 - INFO - PRAGMA main.table_info("users")
+2024-05-10 12:46:53,450 - INFO - [raw sql] ()
+2024-05-10 12:46:53,452 - INFO - PRAGMA main.table_info("transactions")
+2024-05-10 12:46:53,452 - INFO - [raw sql] ()
+2024-05-10 12:46:53,453 - INFO - COMMIT
+2024-05-10 12:46:53,551 - INFO - BEGIN (implicit)
+2024-05-10 12:46:53,560 - INFO - DELETE FROM transactions WHERE transactions.id = ?
+2024-05-10 12:46:53,561 - INFO - [generated in 0.00057s] (10,)
+2024-05-10 12:46:53,562 - INFO - COMMIT
+2024-05-10 12:46:54,349 - INFO - BEGIN (implicit)
+2024-05-10 12:46:54,355 - INFO - SELECT users.username AS users_username 
+FROM users
+2024-05-10 12:46:54,355 - INFO - [generated in 0.00072s] ()
+2024-05-10 12:46:54,454 - INFO - SELECT users.id, users.username, users.customer_name, users.hpasswd, users.salt, users.recovery_code, users.bank_bal, users.sort_code, users.account_number, users.role, users."isLocked", users.secret_token 
+FROM users
+2024-05-10 12:46:54,456 - INFO - [generated in 0.00221s] ()
+2024-05-10 12:46:54,550 - INFO - SELECT transactions.id, transactions.username, transactions.sender, transactions.receiver, transactions.amount, transactions.date, transactions.time, transactions.status 
+FROM transactions
+2024-05-10 12:46:54,551 - INFO - [generated in 0.00055s] ()
+2024-05-10 12:48:31,653 - INFO - Database being accessed for admin.
+2024-05-10 12:48:31,758 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.customer_name AS users_customer_name, users.hpasswd AS users_hpasswd, users.salt AS users_salt, users.recovery_code AS users_recovery_code, users.bank_bal AS users_bank_bal, users.sort_code AS users_sort_code, users.account_number AS users_account_number, users.role AS users_role, users."isLocked" AS "users_isLocked", users.secret_token AS users_secret_token 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?
+2024-05-10 12:48:31,759 - INFO - [generated in 0.00063s] ('admin', 1, 0)
+2024-05-10 12:48:31,855 - INFO - SELECT users.id, users.username, users.customer_name, users.hpasswd, users.salt, users.recovery_code, users.bank_bal, users.sort_code, users.account_number, users.role, users."isLocked", users.secret_token 
+FROM users 
+WHERE users.username = ?
+2024-05-10 12:48:31,856 - INFO - [generated in 0.00057s] ('admin',)
+2024-05-10 12:48:31,951 - INFO - User 'admin' authenticated.
+2024-05-10 12:48:31,954 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.customer_name AS users_customer_name, users.hpasswd AS users_hpasswd, users.salt AS users_salt, users.recovery_code AS users_recovery_code, users.bank_bal AS users_bank_bal, users.sort_code AS users_sort_code, users.account_number AS users_account_number, users.role AS users_role, users."isLocked" AS "users_isLocked", users.secret_token AS users_secret_token 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?
+2024-05-10 12:48:31,954 - INFO - [cached since 0.1962s ago] ('admin', 1, 0)
+2024-05-10 12:48:32,049 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.customer_name AS users_customer_name, users.hpasswd AS users_hpasswd, users.salt AS users_salt, users.recovery_code AS users_recovery_code, users.bank_bal AS users_bank_bal, users.sort_code AS users_sort_code, users.account_number AS users_account_number, users.role AS users_role, users."isLocked" AS "users_isLocked", users.secret_token AS users_secret_token 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?
+2024-05-10 12:48:32,050 - INFO - [cached since 0.2916s ago] ('admin', 1, 0)
+2024-05-10 12:48:32,051 - INFO - Login acquired on user: 'admin'
+2024-05-10 12:48:32,052 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.customer_name AS users_customer_name, users.hpasswd AS users_hpasswd, users.salt AS users_salt, users.recovery_code AS users_recovery_code, users.bank_bal AS users_bank_bal, users.sort_code AS users_sort_code, users.account_number AS users_account_number, users.role AS users_role, users."isLocked" AS "users_isLocked", users.secret_token AS users_secret_token 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?
+2024-05-10 12:48:32,052 - INFO - [cached since 0.2943s ago] ('admin', 1, 0)
+2024-05-10 12:48:32,054 - INFO - User 'admin' has entered the admin dashboard.
+2024-05-10 12:48:32,054 - INFO - admin has accessed the admin page
+2024-05-10 12:48:32,055 - INFO - admin has logged in

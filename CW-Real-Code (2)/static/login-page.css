@@ -1,0 +1,300 @@
+.navigation-links2-nav {
+  flex: 0 0 auto;
+  display: flex; /* Makes the container a flex box */
+  align-items: center; /* Elements appear in the middle of the container */
+  flex-direction: row; /* The elements appear in a horizontal row */
+}
+.navigation-links2-text1 {
+  margin-left: var(--dl-space-space-twounits);
+}
+.navigation-links2-text2 {
+  margin-left: var(--dl-space-space-twounits);
+}
+.navigation-links2-text3 {
+  margin-left: var(--dl-space-space-twounits);
+}
+.navigation-links2-text4 {
+  margin-left: var(--dl-space-space-twounits);
+}
+
+@media(max-width: 767px) {
+  .navigation-links2-nav {
+    align-items: flex-start; /* Elements appear at the start of the flex container */
+    flex-direction: column; /* Elements appear in a vertical stack */
+  }
+  .navigation-links2-text {
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .navigation-links2-text1 {
+    margin-left: 0;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .navigation-links2-text2 {
+    margin-left: 0;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .navigation-links2-text3 {
+    margin-left: 0;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .navigation-links2-text4 {
+    margin-left: 0;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+}
+
+.login-header-container {
+  width: 100%;
+  height: 264px;
+  display: flex;
+  position: relative; /* Elements appear relative to other elements */
+  align-items: flex-start;
+  flex-direction: column;
+}
+.login-header-header {
+  width: 100%;
+  display: flex;
+  max-width: var(--dl-size-size-maxwidth);
+  align-items: center;
+  padding-top: var(--dl-space-space-twounits);
+  border-color: #242021;
+  border-width: 1px; /* Sets width of the border */
+  padding-left: var(--dl-space-space-unit); /* Spaces added around element with custom variable spacing */
+  padding-right: var(--dl-space-space-unit);
+  padding-bottom: var(--dl-space-space-unit);
+  justify-content: space-between; /* Elements appear with equal gaps in between them to fill the container */
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px; /* Makes the border only appear as a divider line at the bottom of the element */
+}
+.login-header-container1 {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center; /* Elements appear in the centre of the container */
+  flex-direction: row; /* Elements appear in a horizontal row */
+}
+.login-header-image {
+  height: var(--dl-size-size-xlarge);
+}
+.login-header-image1 {
+  padding-top: 15px;
+  width: 300px;
+  object-fit: cover;
+}
+.login-header-btn-group {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.login-header-button {
+  font-family: "Noto Sans"; /* Sets the font of the button to Noto Sans */
+  margin-right: var(--dl-space-space-unit); /* adds space outside border */
+  border-radius: var(--dl-radius-radius-radius2); /* makes the border rounded */
+  padding-right: var(--dl-space-space-unit); /* adds space inside border */
+}
+.login-header-button1 {
+  font-family: "Noto Sans"; /* Sets the font of the button to Noto Sans */
+  border-radius: var(--dl-radius-radius-radius2); /* Sets the radius of the border to make it curved */
+  margin-left: 10px; /* adds a space outside of the border */
+}
+.login-header-button1:hover { /* sets styling for when the button is being hovered over only */
+  background-color: #242021; /* Colour the background changes to when button is hovered over */
+  color: white; /* New colour for text */
+  border-color: #9dc416; /* Colour for the border to change to */
+}
+.login-header-button:hover { /* Sets styling for when the button is being hovered over */
+  background-color: #242021;
+  color: white;
+  border-color: #9dc416;
+}
+.login-header-burger-menu {
+  display: none;
+}
+.login-header-icon {
+  width: var(--dl-size-size-xsmall);
+  height: var(--dl-size-size-xsmall);
+  display: none;
+}
+.login-header-mobile-menu {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  padding: 32px;
+  z-index: 100;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.login-header-nav {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.login-header-container2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--dl-space-space-threeunits);
+  justify-content: space-between;
+}
+.login-header-image2 {
+  height: 2rem;
+}
+.login-header-close-mobile-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-header-icon02 {
+  width: var(--dl-size-size-xsmall);
+  height: var(--dl-size-size-xsmall);
+}
+.login-header-icon04 {
+  width: var(--dl-size-size-xsmall);
+  height: var(--dl-size-size-xsmall);
+  margin-right: var(--dl-space-space-twounits);
+}
+.login-header-icon06 {
+  width: var(--dl-size-size-xsmall);
+  height: var(--dl-size-size-xsmall);
+  margin-right: var(--dl-space-space-twounits);
+}
+.login-header-icon08 {
+  width: var(--dl-size-size-xsmall);
+  height: var(--dl-size-size-xsmall);
+}
+
+@media(max-width: 991px) {
+  .login-header-icon {
+    display: flex;
+  }
+}
+@media(max-width: 767px) {
+  .login-header-header {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .login-header-btn-group {
+    display: none;
+  }
+  .login-header-burger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media(max-width: 479px) {
+  .login-header-header {
+    padding: var(--dl-space-space-unit);
+  }
+  .login-header-mobile-menu {
+    padding: 16px;
+  }
+}
+
+.login-page-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 10vh;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.login-page-container1 {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+.login-page-container2 {
+  flex: 1 1 auto;
+  width: 800px; 
+  height: 731px;
+  display: flex;
+  padding: var(--dl-space-space-unit);
+  align-items: center;
+  flex-direction: column !important; /* makes elements appear in a column and overrides any other css styling */
+  margin: 0 auto;
+}
+.login-page-text1 {
+  padding-bottom: var(--dl-space-space-halfunit);
+}
+.login-page-textinput {
+  width: auto;
+  height: auto;
+  margin-top: 0px;
+  border-radius: var(--dl-radius-radius-radius8);
+  margin-bottom: var(--dl-space-space-unit);
+}
+.login-page-text2 {
+  padding-top: 0px;
+  padding-bottom: var(--dl-space-space-halfunit);
+}
+.login-page-textinput1 {
+  width: auto;
+  height: auto;
+  margin-top: 0px;
+  border-radius: var(--dl-radius-radius-radius8);
+  margin-bottom: var(--dl-space-space-halfunit);
+}
+
+.login-page-button {
+  align-self: center; /* Makes the button centre in the middle */
+  background-image: linear-gradient(144deg,rgba(0, 150, 94, 0.64), #006939 50%,#9dc416); /* adds a gradient pattern with custom colours to the background of the button */
+  border: 0;
+  border-radius: 8px; /* makes the border of the button rounded */
+  box-sizing: border-box;
+  color: #d4d4d4;/* Sets the colour of the text in the button */
+  display: flex;
+  font-family: "Noto Sans"; /* Sets font of the button text to Noto Sans */
+  font-weight: 600; /* Sets weighting of the font so it is semi bold */
+  font-size: 18px; /* Sets font size */
+  margin-left: 65px; /* Sets spacing on the left outside the border */
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px; /* Adds spacing on the side of the border between it and the text */
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.login-page-button:active,
+.login-page-button:hover {
+  outline: 0;
+}
+
+.login-page-button span {
+  background-color: #242021; /* Sets the background colour of the button when uninteracted with */
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms; /* Sets length of transition of the background colour */
+  
+}
+
+.login-page-button:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+
+
+
+

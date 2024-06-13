@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Registration-Page - SDS CW2</title> <!-- Sets name of website name -->
+    <meta property="og:title" content="Registration-Page - SDS CW2" />
+    <meta charset="utf-8" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  } /* Sets basic consistent CSS */
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    align-items: center;
+}
+
+.form-input {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #007bff;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+    background-color: #218838;
+}
+
+.form {
+    margin-top: 10px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-size: 16px;
+}
+
+.requirements {
+  margin-top: -5px;
+  font-size: 14px;
+  color: #888;
+}
+
+.reqs li {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: red;
+}
+
+.reqs ul {
+  display: none;
+}
+
+.reqs li.completed {
+  color: rgb(8, 99, 8);
+}
+
+.reqs li.incomplete {
+  color: red;
+}
+
+</style>
+</head>
+
+<body>
+  <div class="form-container">
+    <img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="../static/logo.png" class="logo">
+    <h2 style="text-align: center;">Register Account</h2><br>
+    <p style="text-align: center;">Please enter your details below.</p><br>
+    <p class="error">
+      {{register_message}}
+    </p>
+    <br>
+    <form action="/registration" method="post" class="form"> <!-- Calls the app route /registration in main.py when button is pressed -->
+        <div class="form-group">
+            <label for="fullname">Full Name</label><br>
+            <input type="text" id="fullname" name="fullname" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label><br>
+            <input type="text" id="username" name="username" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" class="form-input" required>
+            <div class="reqs">
+              <ul id="reqqies">
+                  <li id="length">At least 10 characters</li>
+                  <li id="uppercase">At least one uppercase letter</li>
+                  <li id="number">At least one number</li>
+                  <li id="special">At least one special character</li>
+              </ul>
+            </div>
+        </div>
+        <br>        
+        <button type="submit" class="form-submit">Register</button>
+        <br><br>
+    </form>
+</div>
+
+<!--
+<script>
+const pwdInput = document.getElementById('password');
+const reqs = document.querySelectorAll('.reqs li');
+
+pwdInput.addEventListener('input', function() {
+    document.getElementById('reqqies').style.display = "block";
+    const password = pwdInput.value;
+
+    console.log('nice');
+
+    changeReq(reqs, password);
+});
+
+function changeReq(reqs, password) {
+  console.log('test');
+  reqs.forEach(req => {
+        const className = req.id;
+
+        console.log(className);
+
+        switch (className) {
+            case 'length':
+                if (password.length >= 10) {
+                  req.classList.remove('incomplete');
+                  req.classList.add('completed');
+                } else {
+                  req.classList.add('incomplete');
+                  req.classList.remove('completed');
+                }
+                break;
+            case 'uppercase':
+                if (/[A-Z]/.test(password)) {
+                  req.classList.remove('incomplete');
+                  req.classList.add('completed');
+                } else {
+                  req.classList.remove('completed');
+                  req.classList.add('incomplete');
+                }
+                break;
+            case 'number':
+                if (/\d/.test(password)) {
+                  req.classList.remove('incomplete');
+                  req.classList.add('completed');
+                } else {
+                  req.classList.remove('completed');
+                  req.classList.add('incomplete');
+                }
+                break;
+            case 'special':
+                if (/[^A-Za-z0-9]/.test(password)) {
+                  req.classList.remove('incomplete');
+                  req.classList.add('completed');
+                } else {
+                  req.classList.remove('completed');
+                  req.classList.add('incomplete');
+                }
+                break;
+        }
+    });
+}
+
+</script>
+  -->
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>User Dashboard</title> <!-- Sets name of website name -->
+    <meta property="og:title" content="User Dashboard" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  } /* Sets basic consistent CSS */
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+      }
+    </style>
+    <!-- links stylesheets for styling -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <!-- links stylesheets for styling -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!-- links stylesheets for styling -->
+    <link
+      rel="stylesheet"
+      href="../static/style.css"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="../static/style.css" />
+    <div>
+      <link href="../static/index.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <header data-role="Header" class="header-header">
+          <img
+            src="../static/logo.png"
+            alt="Logo"
+            class="header-image"
+          />
+          <img src="../static/text-200h.png" alt="Logo Text" class="header-image1" />
+          <div class="header-container">
+            <div class="header-container1">
+              <div class="header-container2">
+                <div class="header-container3">
+                  <form id="dashboard-form" action="/dashboard" method="post"> <!-- Calls the app route /dashboard in main.py when button is pressed -->
+                    <button type="submit" class="svg-button"> <!-- Creates button as SVG icon -->
+                  <svg viewBox="0 0 1024 1024" class="header-icon02">
+                    <path
+                      d="M1024 590.444l-512-397.426-512 397.428v-162.038l512-397.426 512 397.428zM896 576v384h-256v-256h-256v256h-256v-384l384-288z"
+                    ></path>
+                  </svg>
+                    </button>
+                  </form>
+                </div>
+              </div>
+                <form id="logout-form" action="/logout" method="post"> <!-- Calls the app route in main.py when button is pressed -->
+                  <button type="submit" class="svg-button"> <!-- Creates button as SVG icon -->
+                    <svg viewBox="0 0 1024 1024" class="header-icon04">
+                      <path
+                        d="M384 512h-320v-128h320v-128l192 192-192 192zM1024 0v832l-384 192v-192h-384v-256h64v192h320v-576l256-128h-576v256h-64v-320z"
+                      >
+                      </path>
+                    </svg>
+                  </button>
+                </form>
+            </div>
+          </div>
+        </header>
+        <div class="home-container01">
+          <div class="home-container02">
+            <div class="home-container03">
+              <span class="home-text">Hello {{ username }}</span> <!-- Displays a welcome message using the username variable passed in from the session -->
+              <h1 class="home-text01">
+                <span>Current Account:</span>
+                <br />
+              </h1>
+              <span class="home-text04">
+                <!-- Displays users account details by passing it in using jinja templates-->
+                <span>Account Number: {{user_query.account_number}}</span>
+                <br />
+                <span>Sort Code: {{user_query.sort_code}}</span>
+                <br />
+              </span>
+              <form action="/check_code" methods="post">
+              <button class="login-header-button1 button" type=submit> <!-- Allows user's recovery code to be shown and hidden dynamically with use of jinja -->
+                  {{show_hide_rec}} recovery code
+              </button>
+                <p>{{user_recovery_code}}</p>
+              </form>
+        <div class="home-container08"> <!-- CONTAINER FOR TRANSACTION RELATED STUFF -->
+              <div class="transaction-container"> <!-- Defines a container to hold the transaction history -->
+                <ul class="transaction-list">
+                  <li class="transaction-header-list-item">Transaction History:</li>
+                  <!-- Uses jinja 2 to loop through and display all the user's transaction history -->
+                  {% if tr_query != None %}
+                   {% for row in tr_query%}
+                      {% if (row.receiver == username) and (row.sender != "withdrawal")%}
+                      <li class="home-li list-item">
+                        <span>{{row.date}}&nbsp; &nbsp; Sender: {{row.sender}}&nbsp; &nbsp; 
+                          &nbsp; &nbsp;  Recipient: {{row.receiver}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;+£{{row.amount}}</span> <!-- &nbsp character entity adds spaces that do not break to help with consistent formatting -->
+                      </li>
+                      {% elif row.sender == "withdrawal" %}
+                      <li class="home-li list-item">
+                        <span>{{row.date}}&nbsp; &nbsp; Sender: {{row.sender}}&nbsp; &nbsp; 
+                          &nbsp; &nbsp;  Recipient: {{row.receiver}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-£{{row.amount}}</span> <!-- &nbsp character entity adds spaces that do not break to help with consistent formatting -->
+                      </li>
+                      {% else %}
+                      <li class="home-li list-item">
+                        <span>{{row.date}}&nbsp; &nbsp; Sender: {{row.sender}}&nbsp; &nbsp; 
+                          &nbsp; &nbsp;  Recipient: {{row.receiver}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-£{{row.amount}}</span>
+                      </li>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+
+                </ul>
+              </div>
+            
+          
+            <div class="home-container05">
+                <h1 class="home-text09">Balance: {{bank_bal}} </h1> <!-- Displays user's current bank balance -->
+                <p>{{user_display_message}}</p>
+            </div>
+        
+        
+      <div class="transaction-action-container"> <!-- row container holding all the entry fields for the transaction actions including deposit, withdraw and make transaction -->
+            <form action="/withdraw" method="post">
+            <h1 class="home-text22">Withdraw</h1>
+             
+            <div class="home-container10"> <!-- withdraw container -->
+              <!-- input box for withdrawal amount -->
+              <input 
+                type="number"
+                placeholder="Amount"
+                class="home-textinput input"
+                id='amount'
+                name='amount'
+                step='0.01'
+              />
+               <button class="withdraw-button" type=submit>WITHDRAW</button>
+            </div>
+              </form>
+        
+          
+          <div class="home-container11"> <!-- deposit container -->
+            <form action="/deposit" method="post"> <!-- Calls the app route /deposit in main.py when button is pressed -->
+              <h1 class="home-text23">Deposit</h1>
+              <!-- input field for deposit details: type defines what kind of data is being input, placeholder defines the text to appear inthe box when the user has entered no data, id defines the name of the inputted data so it can be used later, class defines how the input can be referred to in CSS, required ensures the field has data in it before it is submitted -->
+              <input
+                type="number"
+                placeholder="Card Number"
+                id="card_number"
+                class="home-textinput3 input"
+                required
+              />
+              <input
+                type="text"
+                id="expiry_date"
+                name="expiry_date"
+                placeholder="Expiry Date"
+                class="home-textinput4 input"
+                required
+              />
+              <!-- maxlength ensures no more than 3 characters are inputted which is important for CVV as it should be a 3 digit number -->
+              <input
+                type="number"
+                id="cvv"
+                name="cvv"
+                placeholder="CVV"
+                class="home-textinput5 input"
+                required
+                maxlength="3"
+              />
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                placeholder="Amount"
+                class="home-textinput6 input"
+                step="0.01"
+                min="0.01"
+                required
+              />
+              <button class="deposit-button" type=submit>DEPOSIT</button>
+            </form>
+          </div>
+
+        
+          <div class='home-container12'> <!-- Container for transferring money-->
+            <form action="/maketransaction" method="post"> <!-- Calls the app route /maketransaction in main.py when button is pressed -->
+              <h1 class="home-text24">Transfer</h1>
+                <input
+                  type="number"
+                  placeholder="Account Number"
+                  id="account_number"
+                  name="account_number"
+                  class="home-textinput7 input"
+                  required
+                />
+                <input
+                  type="text"
+                  id="sort_code"
+                  name="sort_code"
+                  placeholder="Sort Code"
+                  class="home-textinput8 input"
+                  required
+                />
+                <input
+                  type="number"
+                  id="transaction_amount"
+                  name="transaction_amount"
+                  placeholder="Amount"
+                  class="home-textinput9 input"
+                  step="0.01"
+                  min="0.01"
+                  required
+                />
+                <button class="deposit-button" type=submit>Send Money</button> <!-- button styling in style.css line 103 -->
+            </form>
+          </div>
+      </div>
+        </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <script
+      defer=""
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>

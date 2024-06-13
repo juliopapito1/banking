@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Admin Dashboard</title> <!-- Sets name of website name -->
+    <meta property="og:title" content="Admin Dashboard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  } /* Sets basic consistent CSS */
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style> 
+    <!-- links stylesheets for styling -->
+    <link 
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <!-- links stylesheets for styling -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!-- links stylesheets for styling -->
+    <link
+      rel="stylesheet"
+      href="../static/style.css"
+    />
+  </head>
+  <body>
+    <!-- links stylesheets for styling -->
+    <link rel="stylesheet" href="../static/style.css" />
+    <div>
+      <link href="../static/index.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <header data-role="Header" class="header-header">
+          <img
+            src="../static/logo.png"
+            alt="Logo"
+            class="header-image"
+          />
+          <img src="../static/text-200h.png" alt="Logo Text" class="header-image1" />
+          <div class="header-container">
+            <div class="header-container1">
+              <div class="header-container2">
+                <div class="header-container3">
+                </div>
+              </div>
+                <form id="logout-form" action="/logout" method="post">
+                  <button type="submit" class="svg-button">
+                    <svg viewBox="0 0 1024 1024" class="header-icon04">
+                      <path
+                        d="M384 512h-320v-128h320v-128l192 192-192 192zM1024 0v832l-384 192v-192h-384v-256h64v192h320v-576l256-128h-576v256h-64v-320z"
+                      >
+                      </path>
+                    </svg>
+                  </button>
+                </form>
+            </div>
+          </div>
+        </header>
+        <div class="home-container01">
+          <div class="home-container02">
+            <div class="home-container03">
+              <span class="home-text">Welcome to the Admin Dashboard {{ username }}</span>
+              <h1 class="home-text01">
+                <h2>CREATE NEW USER</h2>
+                <form action="/registration" method="post"> <!-- Calls the app route /registration in main.py when button is pressed -->
+                <label id="namelabel">Full Name</label>
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  id="fullname"
+                  name="fullname"
+                  class="input"
+                />
+                <label id="usernamelabel">Username</label>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  name="username"
+                  id="username"
+                  class="input"
+                />
+                <label id="passwordlabel">Password</label>
+                <input
+                  type="password"
+                  placeholder="password"
+                  id="password"
+                  name="password"
+                  class="input"
+                />
+                <div class="registration-page-container3">
+
+                  <button type="submit" class="registration-page-button button">
+                    Create User
+                  </button>
+
+                </form>
+              </h1>
+            </div>
+          </div>
+          <h2>User Lookup</h2>
+          <form action="/userlookup" method="post"> <!-- Calls the app route /userlookup in main.py when button is pressed -->
+          <label id='Username'>Username</label>
+          <input
+            type="text"
+            placeholder="Username"
+            id="lookupname"
+            name="lookupname"
+            class="input"
+          />
+            <button type="submit">Lookup User</button>
+          </form>
+          <h2>{{display_message}}</h2>
+        </div>
+      </div>
+    </div>
+    <script
+      defer=""
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
+</html>
+
+
+                
+         
+    
+              

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify OTP</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+.container {
+    width: 450px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px black;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    font-weight: bold;
+}
+input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container img {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  display: block;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+
+</style>
+
+<body>
+    <div class="container">
+            <div class="form-group">
+              <h1>Setup Multi-Factor Authentication</h1>
+                <img src="data:image/png;base64, {{ qr_image }}" alt="Secret Token"/>
+                <div class="form-group">
+                  <label for="secret">Secret Token</label>
+                  <input type="text" class="form-control" id="secret" value="{{ secret }}" readonly>
+                </div>
+
+                <h2>Instructions</h2>
+                <ul>
+                  <li>Download <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en&gl=US" target="_blank">Google Authenticator</a> on your mobile.</li>
+                  <li>Add a new authenticator, and scan the QR code above.</li>
+                  <li>Press Verify OTP button once complete.</li>
+                </ul>
+            </div>
+            <form action= "/verify_2fa" method="POST">
+            <button type="submit" role="button"><span class="text">Verify OTP</button>
+            </form>
+    </div>
+</body>
+</html>

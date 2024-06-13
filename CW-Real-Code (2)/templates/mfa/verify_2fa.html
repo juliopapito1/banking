@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify OTP</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+.container {
+    width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px black;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    font-weight: bold;
+}
+input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 20px;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-size: 20px;
+}
+</style>
+
+<body>
+    <div class="container">
+        <img style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="../static/logo.png" class="logo">
+        <h2 style="text-align: center;">Enter One Time Password</h2>
+        <p class="error">
+          {{error_message}}
+        </p>
+        <form action="/verify_2fa" method="POST">
+            <div class="form-group">
+                <input type="text" id="otp" name="otp" required placeholder="123456">
+            </div>
+            <button type="submit">Submit OTP</button>
+        </form>
+    </div>
+</body>
+</html>
